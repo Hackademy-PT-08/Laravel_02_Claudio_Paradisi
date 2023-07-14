@@ -52,30 +52,34 @@
             </div>
         </div>
     </nav>
-    <header>
-        <div class="container-fluid ">
-            <div class="row align-items-center justify-content-center align-content-center">
-                <div id="title-bg-img" class="col-12 ">
-                    <h1 class="text-white text-center mt-5 ">Laravel <span class="text-dark">02</span></h1>
-
+    <header id="title-bg-img">
+       <div class="content"> 
+            <div class="container-fluid">
+                <div class="row text-white text-center">
+                    <div  class="col-12 align-items-center justify-content-center">
+                        <h1 class=" mt-5 ">Laravel <span class="text-dark">02</span></h1>
+                        <h2 class=" mt-4">La pagina "chi siamo" del secondo progetto</h2>
+                        
+                    </div>
                 </div>
             </div>
+            <div class="blur"></div>
         </div>
     </header>
     <main>
         <div class="container-fluid mt-5">
             <div class="row">
-            @foreach($about as $sono)
+            @foreach($owners as $owner)
                 <div class="col-12 col-lg-3">
                    
                      <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">{{$sono['Job']}}</div>
+                        <div class="card-header">{{$owner['Job']}}</div>
                         <div class="card-body">
-                            <h4 class="card-title text-center">{{$sono['Socio']}}</h4>
+                            <h4 class="card-title text-center">{{$owner['Socio']}}</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <span class="badge rounded-pill bg-dark">{{$sono['Contatti']}}</span>
+                            <span class="badge rounded-pill bg-dark">{{$owner['Contatti']}}</span>
                         </div>
-                            <button type="button" class="btn btn-primary btn-lg">scopri di più</button>
+                            <a type="button" class="btn btn-primary btn-lg" href="{{ route('dettagli-owner',['id' =>$owner['id']])}}">scopri di più</a>
                     </div>
                     
                 </div>

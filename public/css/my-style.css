@@ -8,5 +8,32 @@
     background-image: url(http://www.pixolo.it/wp-content/uploads/2012/11/stones-and-sea-1920x1200-wallpaper-6620.jpg);
     background-repeat:no-repeat ;
     background-size: cover;
-    background-position:bottom left;    
+    background-position:bottom left;  
+    position: relative;  
+}
+
+#title-bg-img 
+    .content{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }   
+
+
+#title-bg-img .blur{
+    
+    background-color: #0f02024c;
+    backdrop-filter: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
 }

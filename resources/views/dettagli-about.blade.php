@@ -58,7 +58,7 @@
                 <div class="row text-white text-center">
                     <div  class="col-12 align-items-center justify-content-center">
                         <h1 class=" mt-5 ">Laravel <span class="text-dark">02</span></h1>
-                        <h2 class=" mt-4">La pagina dei servizi del secondo progetto</h2>
+                        <h2 class=" mt-4">La pagina dei dettagli del "chi siamo" del secondo progetto</h2>
                         
                     </div>
                 </div>
@@ -70,21 +70,21 @@
     <main>
         <div class="container-fluid mt-5">
             <div class="row">
-            @foreach($servizi as $servizio)
-                <div class="col-12 col-lg-3">
+            
+                <div class="col-12">
                    
                      <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">{{$servizio['type']}}</div>
+                        <div class="card-header">{{$owner['Job']}}</div>
                         <div class="card-body">
-                            <h4 class="card-title text-center">{{$servizio['argument']}}</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <span class="badge rounded-pill bg-dark">Views: {{$servizio['views']}}</span>
+                            <h4 class="card-title text-center">{{$owner['Socio']}}</h4>
+                            <p class="card-text">{{$owner['descrizione']}}</p>
+                            <span class="badge rounded-pill bg-dark">Views: {{$owner['Contatti']}}</span>
                         </div>
-                            <a type="button" class="btn btn-primary btn-lg" href="{{route( 'dettaglio-servizio', ['id'=>$servizio['id']])}}">scopri di più</a>
+                            <a class="btn btn-primary btn-lg" href="{{ route('about') }}">torna indietro</a>
                     </div>
                     
                 </div>
-                @endforeach
+            
             </div>
         </div>
     </main>

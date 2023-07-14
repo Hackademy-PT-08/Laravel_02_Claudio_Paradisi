@@ -42,11 +42,28 @@ Route::get('/servizi/dettagli/{id}', function($id){
 })->name('dettaglio-servizio');
 
 Route::get('/chi-siamo', function(){
-    $aboutUs= [
+    $owners= [
         ['id' => 1, 'Socio' => 'Ciccio Paciccio', 'Contatti' => 'ciccio@gmail.com', 'Job' => 'recensioni'],
         ['id' => 3, 'Socio' => 'Tizio', 'Contatti' => 'tizio@hotmail.it', 'Job' => 'live coding'],
         ['id' => 2, 'Socio' => 'Caio', 'Contatti' => 'caio@live.it', 'Job' => 'gamplays'],
         ['id' => 4, 'Socio' => ' e Sempronio', 'Contatti' => 'esempronio@libero.it', 'Job' => 'mangaka'],
     ];
-    return view("about", ['about'=> $aboutUs]);
+    return view("about", ['owners'=> $owners]);
 })->name('about');
+
+Route::get('/chi-siamo/dettagli/{id}', function($id){
+    $owners= [
+        ['id' => 1, 'Socio' => 'Ciccio Paciccio', 'Contatti' => 'ciccio@gmail.com', 'Job' => 'recensioni','descrizione'=>'lorem ipsum roba a casaccio ceh faccia capire che ci sia qualcosa in più rispetto alla card della pagina servizi in generale'],
+        ['id' => 3, 'Socio' => 'Tizio', 'Contatti' => 'tizio@hotmail.it', 'Job' => 'live coding','descrizione'=>'lorem ipsum roba a casaccio ceh faccia capire che ci sia qualcosa in più rispetto alla card della pagina servizi in generale'],
+        ['id' => 2, 'Socio' => 'Caio', 'Contatti' => 'caio@live.it', 'Job' => 'gamplays','descrizione'=>'lorem ipsum roba a casaccio ceh faccia capire che ci sia qualcosa in più rispetto alla card della pagina servizi in generale'],
+        ['id' => 4, 'Socio' => ' e Sempronio', 'Contatti' => 'esempronio@libero.it', 'Job' => 'mangaka','descrizione'=>'lorem ipsum roba a casaccio ceh faccia capire che ci sia qualcosa in più rispetto alla card della pagina servizi in generale'],
+    ];
+
+    foreach($owners as $owner){
+        if($owner['id'] == $id){
+            return view("dettagli-about", ['owner' => $owner]);
+        }
+    }
+})->name('dettagli-owner');
+
+//"

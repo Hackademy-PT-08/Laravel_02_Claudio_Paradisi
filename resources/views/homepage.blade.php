@@ -52,14 +52,18 @@
             </div>
         </div>
     </nav>
-    <header>
-        <div class="container-fluid p-0">
-            <div class="row">
-                <div id="title-bg-img" class="col-12 align-items-center justify-content-center">
-                    <h1 class="text-white text-center mt-5 ">Laravel <span class="text-dark">02</span></h1>
-
+    <header id="title-bg-img">
+       <div class="content"> 
+            <div class="container-fluid">
+                <div class="row text-white text-center">
+                    <div  class="col-12 align-items-center justify-content-center">
+                        <h1 class=" mt-5 ">Laravel <span class="text-dark">02</span></h1>
+                        <h2 class=" mt-4">La homepage del secondo progetto</h2>
+                        
+                    </div>
                 </div>
             </div>
+            <div class="blur"></div>
         </div>
     </header>
     
